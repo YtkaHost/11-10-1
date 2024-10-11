@@ -171,15 +171,18 @@ public:
 
         return base_price * base_modifier;
     }
+    void start() {
+        user_head_size();
+        user_rod_shape();
+        user_thread_pitch();
+        user_durability();
+    }
 };
 
 int main() {
     Bolt bolt;
 
-    bolt.user_head_size();
-    bolt.user_rod_shape();
-    bolt.user_thread_pitch();
-    bolt.user_durability();
+    bolt.start();
 
     double final_price = bolt.calculate_price();
     std::cout << "The final price of the bolt is: $" << final_price << std::endl;
